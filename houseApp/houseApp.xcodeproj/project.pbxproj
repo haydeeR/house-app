@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011C687A897A8EF8A3B87411 /* Pods_houseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3E7AEB64705757CB463D49 /* Pods_houseApp.framework */; };
 		9B6195AE208FC8C100900E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6195AD208FC8C100900E8E /* AppDelegate.swift */; };
 		9B6195B0208FC8C100900E8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6195AF208FC8C100900E8E /* LoginViewController.swift */; };
 		9B6195B3208FC8C100900E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6195B1208FC8C100900E8E /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2585BCDC62426C23FC496B17 /* Pods-houseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houseApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-houseApp/Pods-houseApp.release.xcconfig"; sourceTree = "<group>"; };
+		4F67FE586A839691F99CFE69 /* Pods-houseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houseApp/Pods-houseApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9B6195AA208FC8C000900E8E /* houseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = houseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6195AD208FC8C100900E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B6195AF208FC8C100900E8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		9B6195B7208FC8C200900E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B6195B9208FC8C200900E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6195C3208FCF0200900E8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/Homeapp/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC3E7AEB64705757CB463D49 /* Pods_houseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_houseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011C687A897A8EF8A3B87411 /* Pods_houseApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17955B1AC2C2CA35554CBD74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC3E7AEB64705757CB463D49 /* Pods_houseApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B6195A1208FC8C000900E8E = {
 			isa = PBXGroup;
 			children = (
 				9B6195AC208FC8C000900E8E /* houseApp */,
 				9B6195AB208FC8C000900E8E /* Products */,
+				A2C2AE5B37B33272B61097E5 /* Pods */,
+				17955B1AC2C2CA35554CBD74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +98,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A2C2AE5B37B33272B61097E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F67FE586A839691F99CFE69 /* Pods-houseApp.debug.xcconfig */,
+				2585BCDC62426C23FC496B17 /* Pods-houseApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B6195BC208FC8C200900E8E /* Build configuration list for PBXNativeTarget "houseApp" */;
 			buildPhases = (
+				75085B98ABAE9F3FA81B71B0 /* [CP] Check Pods Manifest.lock */,
 				9B6195A6208FC8C000900E8E /* Sources */,
 				9B6195A7208FC8C000900E8E /* Frameworks */,
 				9B6195A8208FC8C000900E8E /* Resources */,
+				C0A81BAF204DD5BD7A035289 /* [CP] Embed Pods Frameworks */,
+				A5C84DBF228C5F1BA3215B3B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75085B98ABAE9F3FA81B71B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-houseApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5C84DBF228C5F1BA3215B3B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-houseApp/Pods-houseApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0A81BAF204DD5BD7A035289 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-houseApp/Pods-houseApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-houseApp/Pods-houseApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B6195A6208FC8C000900E8E /* Sources */ = {
@@ -298,15 +381,13 @@
 		};
 		9B6195BD208FC8C200900E8E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F67FE586A839691F99CFE69 /* Pods-houseApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TF76XBAQC8;
 				INFOPLIST_FILE = houseApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hrodriguez.houseApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -316,15 +397,13 @@
 		};
 		9B6195BE208FC8C200900E8E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2585BCDC62426C23FC496B17 /* Pods-houseApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TF76XBAQC8;
 				INFOPLIST_FILE = houseApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hrodriguez.houseApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
