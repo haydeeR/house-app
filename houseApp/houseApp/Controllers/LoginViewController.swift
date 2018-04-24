@@ -21,8 +21,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginFBButton(_ sender: UIButton) {
-        
+        AuthHandler.facebookLogin(loginVC: self)
     }
-    
 }
 

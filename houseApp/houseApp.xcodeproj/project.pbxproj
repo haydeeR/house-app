@@ -14,6 +14,7 @@
 		9B6195B5208FC8C200900E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B6195B4208FC8C200900E8E /* Assets.xcassets */; };
 		9B6195B8208FC8C200900E8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6195B6208FC8C200900E8E /* LaunchScreen.storyboard */; };
 		9B6195C4208FCF0200900E8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B6195C3208FCF0200900E8E /* GoogleService-Info.plist */; };
+		9B6195C7208FD2B300900E8E /* AuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6195C6208FD2B300900E8E /* AuthHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		9B6195B7208FC8C200900E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B6195B9208FC8C200900E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6195C3208FCF0200900E8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/Homeapp/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9B6195C6208FD2B300900E8E /* AuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHandler.swift; sourceTree = "<group>"; };
 		FC3E7AEB64705757CB463D49 /* Pods_houseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_houseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 		9B6195AC208FC8C000900E8E /* houseApp */ = {
 			isa = PBXGroup;
 			children = (
+				9B6195C5208FD28200900E8E /* AuthHelpers */,
 				9B6195C0208FC91500900E8E /* Views */,
 				9B6195BF208FC90800900E8E /* Controllers */,
 				9B6195AD208FC8C100900E8E /* AppDelegate.swift */,
@@ -96,6 +99,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9B6195C5208FD28200900E8E /* AuthHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				9B6195C6208FD2B300900E8E /* AuthHandler.swift */,
+			);
+			path = AuthHelpers;
 			sourceTree = "<group>";
 		};
 		A2C2AE5B37B33272B61097E5 /* Pods */ = {
@@ -218,12 +229,26 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-houseApp/Pods-houseApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +265,7 @@
 			files = (
 				9B6195B0208FC8C100900E8E /* LoginViewController.swift in Sources */,
 				9B6195AE208FC8C100900E8E /* AppDelegate.swift in Sources */,
+				9B6195C7208FD2B300900E8E /* AuthHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
