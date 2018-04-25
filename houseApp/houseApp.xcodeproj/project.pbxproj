@@ -10,11 +10,14 @@
 		011C687A897A8EF8A3B87411 /* Pods_houseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC3E7AEB64705757CB463D49 /* Pods_houseApp.framework */; };
 		9B6195AE208FC8C100900E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6195AD208FC8C100900E8E /* AppDelegate.swift */; };
 		9B6195B0208FC8C100900E8E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6195AF208FC8C100900E8E /* LoginViewController.swift */; };
-		9B6195B3208FC8C100900E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6195B1208FC8C100900E8E /* Main.storyboard */; };
+		9B6195B3208FC8C100900E8E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6195B1208FC8C100900E8E /* Login.storyboard */; };
 		9B6195B5208FC8C200900E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B6195B4208FC8C200900E8E /* Assets.xcassets */; };
 		9B6195B8208FC8C200900E8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6195B6208FC8C200900E8E /* LaunchScreen.storyboard */; };
 		9B6195C4208FCF0200900E8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B6195C3208FCF0200900E8E /* GoogleService-Info.plist */; };
 		9B6195C7208FD2B300900E8E /* AuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6195C6208FD2B300900E8E /* AuthHandler.swift */; };
+		9B6195CF208FF98C00900E8E /* UIViewController+ReusableId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6195CE208FF98C00900E8E /* UIViewController+ReusableId.swift */; };
+		9B6195D12090062300900E8E /* HomeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6195D02090062300900E8E /* HomeListTableViewController.swift */; };
+		9B9B8AD820900C78004E396D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B8AD720900C78004E396D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +26,15 @@
 		9B6195AA208FC8C000900E8E /* houseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = houseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6195AD208FC8C100900E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B6195AF208FC8C100900E8E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		9B6195B2208FC8C100900E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B6195B2208FC8C100900E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		9B6195B4208FC8C200900E8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B6195B7208FC8C200900E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B6195B9208FC8C200900E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6195C3208FCF0200900E8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/Homeapp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B6195C6208FD2B300900E8E /* AuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHandler.swift; sourceTree = "<group>"; };
+		9B6195CE208FF98C00900E8E /* UIViewController+ReusableId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ReusableId.swift"; sourceTree = "<group>"; };
+		9B6195D02090062300900E8E /* HomeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListTableViewController.swift; sourceTree = "<group>"; };
+		9B9B8AD720900C78004E396D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FC3E7AEB64705757CB463D49 /* Pods_houseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_houseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -73,11 +79,13 @@
 		9B6195AC208FC8C000900E8E /* houseApp */ = {
 			isa = PBXGroup;
 			children = (
+				9B6195CC208FF92A00900E8E /* Utilities */,
 				9B6195C5208FD28200900E8E /* AuthHelpers */,
 				9B6195C0208FC91500900E8E /* Views */,
 				9B6195BF208FC90800900E8E /* Controllers */,
 				9B6195AD208FC8C100900E8E /* AppDelegate.swift */,
-				9B6195B1208FC8C100900E8E /* Main.storyboard */,
+				9B6195B1208FC8C100900E8E /* Login.storyboard */,
+				9B9B8AD720900C78004E396D /* Main.storyboard */,
 				9B6195B4208FC8C200900E8E /* Assets.xcassets */,
 				9B6195B6208FC8C200900E8E /* LaunchScreen.storyboard */,
 				9B6195B9208FC8C200900E8E /* Info.plist */,
@@ -90,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				9B6195AF208FC8C100900E8E /* LoginViewController.swift */,
+				9B6195D02090062300900E8E /* HomeListTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,6 +116,22 @@
 				9B6195C6208FD2B300900E8E /* AuthHandler.swift */,
 			);
 			path = AuthHelpers;
+			sourceTree = "<group>";
+		};
+		9B6195CC208FF92A00900E8E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9B6195CD208FF93D00900E8E /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9B6195CD208FF93D00900E8E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B6195CE208FF98C00900E8E /* UIViewController+ReusableId.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A2C2AE5B37B33272B61097E5 /* Pods */ = {
@@ -180,9 +205,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B6195B8208FC8C200900E8E /* LaunchScreen.storyboard in Resources */,
+				9B9B8AD820900C78004E396D /* Main.storyboard in Resources */,
 				9B6195C4208FCF0200900E8E /* GoogleService-Info.plist in Resources */,
 				9B6195B5208FC8C200900E8E /* Assets.xcassets in Resources */,
-				9B6195B3208FC8C100900E8E /* Main.storyboard in Resources */,
+				9B6195B3208FC8C100900E8E /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B6195CF208FF98C00900E8E /* UIViewController+ReusableId.swift in Sources */,
 				9B6195B0208FC8C100900E8E /* LoginViewController.swift in Sources */,
 				9B6195AE208FC8C100900E8E /* AppDelegate.swift in Sources */,
+				9B6195D12090062300900E8E /* HomeListTableViewController.swift in Sources */,
 				9B6195C7208FD2B300900E8E /* AuthHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,12 +300,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9B6195B1208FC8C100900E8E /* Main.storyboard */ = {
+		9B6195B1208FC8C100900E8E /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9B6195B2208FC8C100900E8E /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		9B6195B6208FC8C200900E8E /* LaunchScreen.storyboard */ = {
@@ -413,7 +441,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TF76XBAQC8;
 				INFOPLIST_FILE = houseApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hrodriguez.houseApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -429,7 +460,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TF76XBAQC8;
 				INFOPLIST_FILE = houseApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hrodriguez.houseApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

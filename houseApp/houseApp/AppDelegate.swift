@@ -22,13 +22,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func verifyAuth() {
-       if AuthHandler.getCurrentAuth() != nil {
-      //      let mainStoryboard: UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
-        //    self.window?.rootViewController?.performSegue(withIdentifier: "HomeViewSegue", sender: nil)
-        } else {
-            print("Usuario no logeado")
+        var storyboard : String
+        var viewController: String
+        if AuthHandler.getCurrentAuth() != nil {
+            storyboard = "Main"
+            viewController = HomeListTableViewController.reusableId
+       } else {
+            storyboard = "Login"
+            viewController = LoginViewController.reusableId
         }
+        initView(with: storyboard, viewControllerName: viewController)
     }
+    
+    func initView(with storyboardName: String, viewControllerName: String) {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: viewControllerName) as UIViewController
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+    }
+
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
