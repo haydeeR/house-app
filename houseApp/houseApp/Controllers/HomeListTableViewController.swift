@@ -7,22 +7,30 @@
 //
 
 import UIKit
+import PromiseKit
 
 class HomeListTableViewController: UITableViewController {
 
+    private var houseList = [House]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        getHouses()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func getHouses() {
+        Handler.getLists().map({ houseList -> Void in
+            self.houseList = houseList
+            })
+            .done {
+                for item in self.houseList {
+                    print ("Casa: \(item.address)")
+                }
+                self.tableView.reloadData()
+            }
+            .catch({ error in
+                print(error)
+            })
     }
 
     // MARK: - Table view data source

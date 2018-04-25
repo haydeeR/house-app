@@ -13,4 +13,8 @@ target 'houseApp' do
   # Pods for facebook login
   pod 'FacebookCore'
   pod 'FacebookLogin'
+  #Pod for handling the request to database
+  pod 'PromiseKit', '~> 6.0'
+  #Pod for parsing the request of database
+  pod 'ObjectMapper'
 end
