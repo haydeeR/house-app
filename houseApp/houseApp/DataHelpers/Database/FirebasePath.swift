@@ -11,4 +11,6 @@ import Foundation
 enum FirebasePath: String {
     case users
     case houses
+    case favoriteHouses
+    case pictures
 }

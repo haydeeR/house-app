@@ -60,6 +60,16 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - ObjectMapper (3.1.0)
+  - PromiseKit (6.2.3):
+    - PromiseKit/CorePromise (= 6.2.3)
+    - PromiseKit/Foundation (= 6.2.3)
+    - PromiseKit/UIKit (= 6.2.3)
+  - PromiseKit/CorePromise (6.2.3)
+  - PromiseKit/Foundation (6.2.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.2.3):
+    - PromiseKit/CorePromise
 
 DEPENDENCIES:
   - FacebookCore
@@ -67,6 +77,8 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - ObjectMapper
+  - PromiseKit (~> 6.0)
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -84,7 +96,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  PromiseKit: 62f37bb4900a9b0b7550d017e41497171d93face
 
-PODFILE CHECKSUM: eefa9d0f8efb7eb0641a53b687729e6a30b77c5d
+PODFILE CHECKSUM: 73bcc4eb8d6d870ec85b824e1561b276408d7374
 
 COCOAPODS: 1.4.0

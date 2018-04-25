@@ -7,3 +7,7 @@
 //
 
 import Foundation
+protocol DBModel {
+    var id: String { get set }
+    func toDictionary() -> [String: Any]
+}
