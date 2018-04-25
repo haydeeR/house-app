@@ -18,6 +18,7 @@ class House: Mappable {
     var location: Location = Location(longitude: 0, latitude: 0)
     var image: UIImage?
     var id: String = ""
+    var type: String = ""
     
     required init?(map: Map){
         
@@ -29,8 +30,9 @@ class House: Mappable {
         city            <- map["city"]
         description     <- map["description"]
         price           <- map["price"]
-        location     <- map["location"]
-        id             <- map["id"]
+        location        <- map["location"]
+        id              <- map["id"]
+        type            <- map["type"]
     }
     
     func toDictionary() -> [String: Any] {
@@ -39,6 +41,7 @@ class House: Mappable {
                 "city": city,
                 "description": description,
                 "price": price,
+                "type": type,
                 "location": ["latitude": location.latitude, "longitude": location.longitude]]
     }
 }
