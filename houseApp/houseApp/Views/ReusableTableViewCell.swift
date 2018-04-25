@@ -24,7 +24,5 @@ class ReusableTableViewCell: UITableViewCell {
         typeHouse.text = house.type
         state.text = house.state
         price.text  = String("$ \(house.price)")
-        
     }
-    
 }

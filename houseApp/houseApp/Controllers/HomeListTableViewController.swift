@@ -15,6 +15,8 @@ class HomeListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nib = UINib(nibName: ReusableTableViewCell.reusableId, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: ReusableTableViewCell.reusableId)
         getHouses()
     }
     
@@ -49,5 +51,26 @@ class HomeListTableViewController: UITableViewController {
             cell.configure(with: house)
            return cell
         }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let house = houseList[indexPath.row]
+        performSegue(withIdentifier: SegueIdentifier.houseDetail.rawValue, sender: house)
+    }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifierString = segue.identifier, let identifier = SegueIdentifier(rawValue: identifierString) else {
+            return
+        }
+        if identifier == SegueIdentifier.houseDetail {
+            guard let controller = segue.destination as? HouseDetailViewController else {
+                return
+            }
+            guard let house = sender as? House else {
+                return
+            }
+            controller.house = house
+        }
+    }
 
 }
