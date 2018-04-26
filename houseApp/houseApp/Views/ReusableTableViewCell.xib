@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,35 +22,35 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7GS-lR-1Ji">
                         <rect key="frame" x="8" y="8" width="304" height="83.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cD2-y3-ymG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cD2-y3-ymG">
                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="83.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="cD2-y3-ymG" secondAttribute="height" multiplier="1:1" id="qrV-C7-oFY"/>
+                                    <constraint firstAttribute="width" constant="83.5" id="9zA-m0-2R1"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Tk9-v8-fFw">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Tk9-v8-fFw">
                                 <rect key="frame" x="93.5" y="0.0" width="210.5" height="83.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjz-MM-A3U">
-                                        <rect key="frame" x="0.0" y="0.0" width="210.5" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="210.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSh-LS-GHu">
-                                        <rect key="frame" x="0.0" y="22" width="210.5" height="17.5"/>
+                                        <rect key="frame" x="0.0" y="21.5" width="210.5" height="19"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euq-qA-SXK">
-                                        <rect key="frame" x="0.0" y="44.5" width="210.5" height="17"/>
+                                        <rect key="frame" x="0.0" y="43.5" width="210.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="18"/>
                                         <color key="textColor" red="0.97285864637305697" green="0.17867090226109988" blue="0.21856350689145848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7u-8H-uH2">
-                                        <rect key="frame" x="0.0" y="66.5" width="210.5" height="17"/>
+                                        <rect key="frame" x="0.0" y="65" width="210.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -70,6 +69,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="mainHouseImage" destination="cD2-y3-ymG" id="HLf-Gr-hMT"/>
                 <outlet property="price" destination="euq-qA-SXK" id="l4a-zD-61a"/>
                 <outlet property="state" destination="A7u-8H-uH2" id="POk-CF-cTl"/>
                 <outlet property="title" destination="Jjz-MM-A3U" id="9fv-Ll-73z"/>

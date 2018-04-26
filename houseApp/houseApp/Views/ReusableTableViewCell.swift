@@ -13,6 +13,7 @@ class ReusableTableViewCell: UITableViewCell {
     @IBOutlet weak var typeHouse: UILabel!
     @IBOutlet weak var state: UILabel!
     @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var mainHouseImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +25,6 @@ class ReusableTableViewCell: UITableViewCell {
         typeHouse.text = house.type
         state.text = house.state
         price.text  = String("$ \(house.price)")
+        mainHouseImage.image = house.image
     }
 }

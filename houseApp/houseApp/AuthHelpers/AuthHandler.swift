@@ -49,8 +49,8 @@ struct AuthHandler {
     }
     */
     static func getCurrentAuth() -> String? {
-        if Auth.auth().currentUser != nil {
-            return Auth.auth().currentUser!.uid
+        if let currentUser = Auth.auth().currentUser {
+            return currentUser.uid
         } else {
             return nil
         }
@@ -58,8 +58,7 @@ struct AuthHandler {
     
     static func getUserInfo(onSuccess: @escaping ([String: Any]?) -> Void, onFailure: @escaping (Error) -> Void) {
         let connection = GraphRequestConnection()
-        connection.add(GraphRequest(graphPath: "me", parameters: ["fields": "id, first_name, last_name"],
-                                    accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)) { _, result in
+        connection.add(GraphRequest(graphPath: "me", parameters: ["fields": "id, first_name, last_name"],accessToken: AccessToken.current, httpMethod: .GET, apiVersion: .defaultVersion)) { _, result in
                                         switch result {
                                         case .success(let response):
                                             onSuccess(response.dictionaryValue)
