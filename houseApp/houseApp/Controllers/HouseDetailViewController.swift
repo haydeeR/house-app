@@ -9,29 +9,75 @@
 import UIKit
 
 class HouseDetailViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    fileprivate enum tableRowTypes: Int {
+        case image
+        case address
+        case price
+        case details
+    }
+    fileprivate let rowAmount = 4
+    fileprivate let textCellIdentifier = "cell"
     var house: House?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        tableView.register(UINib(nibName: HomeImageTableViewCell.reusableId, bundle: nil), forCellReuseIdentifier: HomeImageTableViewCell.reusableId)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
+        tableView.tableFooterView = UIView(frame: .zero)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func configure(house: House) {
+        self.house = house
     }
-    */
-
+    
 }
+
+extension HouseDetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rowAmount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cellText: String?
+        var cellImage: UIImage?
+        if let house = house {
+            switch indexPath.row {
+            case tableRowTypes.image.rawValue:
+                cellImage = house.image
+            case tableRowTypes.address.rawValue:
+                cellText = house.address
+                break;
+            case tableRowTypes.price.rawValue:
+                cellText = "$\(house.price)"
+                break;
+            case tableRowTypes.details.rawValue:
+                cellText = house.description
+                break;
+            default:
+                break;
+            }
+        }
+        if indexPath.row == tableRowTypes.image.rawValue {
+            var cell = tableView.dequeueReusableCell(withIdentifier: HomeImageTableViewCell.reusableId) as? HomeImageTableViewCell
+            if cell == nil {
+                cell = HomeImageTableViewCell.init(style: .default, reuseIdentifier: HomeImageTableViewCell.reusableId)
+            }
+            cell?.configureWith(cellImage)
+            
+            return cell!
+        } else {
+            var cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier)
+            
+            if cell == nil {
+                cell = UITableViewCell.init(style: .default, reuseIdentifier: textCellIdentifier)
+            }
+            cell?.textLabel?.text = cellText
+            return cell!
+        }
+    }
+    
+}
+

@@ -32,10 +32,14 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="mapSegmentSwitch:" destination="6WB-aL-sjd" eventType="valueChanged" id="L4S-AI-iXP"/>
+                                </connections>
                             </segmentedControl>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="segment" destination="0k1-pu-3i4" id="wlx-BP-jZA"/>
                         <segue destination="1nO-1H-KNd" kind="show" identifier="houseDetail" id="1O2-wR-8gT"/>
                     </connections>
                 </tableViewController>
@@ -43,16 +47,35 @@
             </objects>
             <point key="canvasLocation" x="847" y="16"/>
         </scene>
-        <!--View Controller-->
+        <!--House Detail View Controller-->
         <scene sceneID="fdt-e1-hKE">
             <objects>
-                <viewController id="1nO-1H-KNd" sceneMemberID="viewController">
+                <viewController id="1nO-1H-KNd" customClass="HouseDetailViewController" customModule="houseApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kQF-hJ-hDP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nt9-xs-gBh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1nO-1H-KNd" id="DgG-Lq-Mhi"/>
+                                    <outlet property="delegate" destination="1nO-1H-KNd" id="Al7-m4-23O"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nt9-xs-gBh" firstAttribute="top" secondItem="0uY-jY-vJg" secondAttribute="top" id="79V-74-dG6"/>
+                            <constraint firstItem="0uY-jY-vJg" firstAttribute="trailing" secondItem="nt9-xs-gBh" secondAttribute="trailing" id="HIk-ge-3bf"/>
+                            <constraint firstItem="0uY-jY-vJg" firstAttribute="bottom" secondItem="nt9-xs-gBh" secondAttribute="bottom" id="VDe-OW-eaf"/>
+                            <constraint firstItem="nt9-xs-gBh" firstAttribute="leading" secondItem="0uY-jY-vJg" secondAttribute="leading" id="pZO-m0-aaS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0uY-jY-vJg"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="nt9-xs-gBh" id="3BL-YQ-e7U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKR-B1-jmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

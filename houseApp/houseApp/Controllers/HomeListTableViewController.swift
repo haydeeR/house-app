@@ -12,6 +12,8 @@ import PromiseKit
 class HomeListTableViewController: UITableViewController {
 
     private var houseList = [House]()
+    @IBOutlet weak var segment: UISegmentedControl!
+    private var typeOfView: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,5 +88,4 @@ class HomeListTableViewController: UITableViewController {
             controller.house = house
         }
     }
-
 }
