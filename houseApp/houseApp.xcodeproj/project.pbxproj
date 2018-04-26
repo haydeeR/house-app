@@ -27,6 +27,8 @@
 		9B9B8AED2090EE41004E396D /* ReusableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B8AEB2090EE41004E396D /* ReusableTableViewCell.xib */; };
 		9B9B8AEE2090EE41004E396D /* ReusableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8AEC2090EE41004E396D /* ReusableTableViewCell.swift */; };
 		9B9B8AF02090FC63004E396D /* UITableViewCell+ReusableId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8AEF2090FC63004E396D /* UITableViewCell+ReusableId.swift */; };
+		9B9B8AF2209108FC004E396D /* SeguesIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8AF1209108FC004E396D /* SeguesIdentifier.swift */; };
+		9B9B8AF420910956004E396D /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8AF320910956004E396D /* HouseDetailViewController.swift */; };
 		A72A83CE848A40BE8A341C01 /* Pods_houseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C1AA29D3BCB3CB9214AF27 /* Pods_houseApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		9B9B8AEB2090EE41004E396D /* ReusableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableTableViewCell.xib; sourceTree = "<group>"; };
 		9B9B8AEC2090EE41004E396D /* ReusableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTableViewCell.swift; sourceTree = "<group>"; };
 		9B9B8AEF2090FC63004E396D /* UITableViewCell+ReusableId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReusableId.swift"; sourceTree = "<group>"; };
+		9B9B8AF1209108FC004E396D /* SeguesIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguesIdentifier.swift; sourceTree = "<group>"; };
+		9B9B8AF320910956004E396D /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
 		B6DD576CD2F13B6D086094AB /* Pods-houseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houseApp/Pods-houseApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6C1AA29D3BCB3CB9214AF27 /* Pods_houseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_houseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -128,6 +132,7 @@
 			children = (
 				9B6195AF208FC8C100900E8E /* LoginViewController.swift */,
 				9B6195D02090062300900E8E /* HomeListTableViewController.swift */,
+				9B9B8AF320910956004E396D /* HouseDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				9B6195CD208FF93D00900E8E /* Extensions */,
+				9B9B8AF1209108FC004E396D /* SeguesIdentifier.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -356,10 +362,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9B8AF420910956004E396D /* HouseDetailViewController.swift in Sources */,
 				9B6195CF208FF98C00900E8E /* UIViewController+ReusableId.swift in Sources */,
 				9B9B8AE72090E5CF004E396D /* Location.swift in Sources */,
 				9B9B8AE92090E7C7004E396D /* ParseHandler.swift in Sources */,
 				9B9B8AEE2090EE41004E396D /* ReusableTableViewCell.swift in Sources */,
+				9B9B8AF2209108FC004E396D /* SeguesIdentifier.swift in Sources */,
 				9B9B8ADE20903934004E396D /* DBModel.swift in Sources */,
 				9B9B8AF02090FC63004E396D /* UITableViewCell+ReusableId.swift in Sources */,
 				9B6195B0208FC8C100900E8E /* LoginViewController.swift in Sources */,

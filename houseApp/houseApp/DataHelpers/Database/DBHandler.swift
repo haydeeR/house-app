@@ -8,13 +8,14 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseStorage
 import PromiseKit
 
 struct DBHandler {
     static let houses = Database.database().reference(withPath: FirebasePath.houses.rawValue)
     static let users = Database.database().reference(withPath: FirebasePath.users.rawValue)
     static let favoriteHouses = Database.database().reference(withPath: FirebasePath.favoriteHouses.rawValue)
-    static let pictures = Database.database().reference(withPath: FirebasePath.pictures.rawValue)
+    static let images = Storage.storage().reference(forURL: "gs://home-app-106f7.appspot.com/")
     
     static func getLists() -> Promise <[[String: Any]]> {
         return Promise { resolve in
@@ -28,6 +29,13 @@ struct DBHandler {
                 }
                 resolve.fulfill(houselistDictArray)
             })
+        }
+    }
+    
+    static func getHouseImage(house: House, completionHandler: @escaping (Data?, Error?) -> ()) {
+        let houseImageRef = images.child(house.id)
+        houseImageRef.getData(maxSize: Int64.max) { data, error in
+            completionHandler(data, error)
         }
     }
     
