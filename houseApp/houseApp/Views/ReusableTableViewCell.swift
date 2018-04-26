@@ -9,16 +9,22 @@
 import UIKit
 
 class ReusableTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var typeHouse: UILabel!
+    @IBOutlet weak var state: UILabel!
+    @IBOutlet weak var price: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(with house: House) {
+        title.text = house.description
+        typeHouse.text = house.type
+        state.text = house.state
+        price.text  = String("$ \(house.price)")
+        
     }
     
 }

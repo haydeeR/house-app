@@ -26,6 +26,7 @@
 		9B9B8AE92090E7C7004E396D /* ParseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8AE82090E7C7004E396D /* ParseHandler.swift */; };
 		9B9B8AED2090EE41004E396D /* ReusableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B8AEB2090EE41004E396D /* ReusableTableViewCell.xib */; };
 		9B9B8AEE2090EE41004E396D /* ReusableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8AEC2090EE41004E396D /* ReusableTableViewCell.swift */; };
+		9B9B8AF02090FC63004E396D /* UITableViewCell+ReusableId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8AEF2090FC63004E396D /* UITableViewCell+ReusableId.swift */; };
 		A72A83CE848A40BE8A341C01 /* Pods_houseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C1AA29D3BCB3CB9214AF27 /* Pods_houseApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		9B9B8AE82090E7C7004E396D /* ParseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseHandler.swift; sourceTree = "<group>"; };
 		9B9B8AEB2090EE41004E396D /* ReusableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableTableViewCell.xib; sourceTree = "<group>"; };
 		9B9B8AEC2090EE41004E396D /* ReusableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTableViewCell.swift; sourceTree = "<group>"; };
+		9B9B8AEF2090FC63004E396D /* UITableViewCell+ReusableId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReusableId.swift"; sourceTree = "<group>"; };
 		B6DD576CD2F13B6D086094AB /* Pods-houseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houseApp/Pods-houseApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6C1AA29D3BCB3CB9214AF27 /* Pods_houseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_houseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				9B6195CE208FF98C00900E8E /* UIViewController+ReusableId.swift */,
+				9B9B8AEF2090FC63004E396D /* UITableViewCell+ReusableId.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				9B9B8AE92090E7C7004E396D /* ParseHandler.swift in Sources */,
 				9B9B8AEE2090EE41004E396D /* ReusableTableViewCell.swift in Sources */,
 				9B9B8ADE20903934004E396D /* DBModel.swift in Sources */,
+				9B9B8AF02090FC63004E396D /* UITableViewCell+ReusableId.swift in Sources */,
 				9B6195B0208FC8C100900E8E /* LoginViewController.swift in Sources */,
 				9B6195AE208FC8C100900E8E /* AppDelegate.swift in Sources */,
 				9B9B8ADC20903925004E396D /* FirebasePath.swift in Sources */,
@@ -513,7 +517,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TF76XBAQC8;
 				INFOPLIST_FILE = houseApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hrodriguez.houseApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -529,7 +536,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TF76XBAQC8;
 				INFOPLIST_FILE = houseApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hrodriguez.houseApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
