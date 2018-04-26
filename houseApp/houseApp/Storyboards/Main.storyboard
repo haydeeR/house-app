@@ -33,13 +33,13 @@
                                     <segment title="Second"/>
                                 </segments>
                                 <connections>
-                                    <action selector="mapSegmentSwitch:" destination="6WB-aL-sjd" eventType="valueChanged" id="L4S-AI-iXP"/>
+                                    <action selector="changeViewAction:" destination="6WB-aL-sjd" eventType="valueChanged" id="auA-bV-Eq0"/>
                                 </connections>
                             </segmentedControl>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="segment" destination="0k1-pu-3i4" id="wlx-BP-jZA"/>
+                        <outlet property="segment" destination="0k1-pu-3i4" id="05f-XP-6Kg"/>
                         <segue destination="1nO-1H-KNd" kind="show" identifier="houseDetail" id="1O2-wR-8gT"/>
                     </connections>
                 </tableViewController>
@@ -73,6 +73,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0uY-jY-vJg"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dZc-2G-IMr">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="U9s-SP-vMF">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ZYN-Y4-6Hv">
+                                <rect key="frame" x="238" y="7.5" width="121" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeViewAction:" destination="1nO-1H-KNd" eventType="valueChanged" id="AYD-o2-p9c"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="nt9-xs-gBh" id="3BL-YQ-e7U"/>
                     </connections>

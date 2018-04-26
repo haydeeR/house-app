@@ -13,13 +13,20 @@ class HomeListTableViewController: UITableViewController {
 
     private var houseList = [House]()
     @IBOutlet weak var segment: UISegmentedControl!
-    private var typeOfView: Int?
+    private var typeOfView = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: ReusableTableViewCell.reusableId, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: ReusableTableViewCell.reusableId)
+        tableView.tableFooterView = UIView(frame: .zero)
+        registerCells()
         getHouses()
+    }
+    
+    private func registerCells() {
+        var nib = UINib(nibName: ReusableTableViewCell.reusableId, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: ReusableTableViewCell.reusableId)
+        nib = UINib(nibName: MapReusableCell.reusableId, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: MapReusableCell.reusableId)
     }
     
     private func getHouses() {
@@ -58,19 +65,29 @@ class HomeListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if typeOfView == TypeView.map.rawValue {
+            return 1
+        }
         return houseList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if typeOfView == TypeView.map.rawValue {
+            let cell = (tableView.dequeueReusableCell(withIdentifier: MapReusableCell.reusableId, for: indexPath) as? MapReusableCell)!
+            cell.configure(with: houseList)
+            return cell
+        }
         let house = houseList[indexPath.row]
         let cell = (tableView.dequeueReusableCell(withIdentifier: ReusableTableViewCell.reusableId, for: indexPath) as? ReusableTableViewCell)!
-            cell.configure(with: house)
-           return cell
+        cell.configure(with: house)
+        return cell
         }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if typeOfView == TypeView.homelist.rawValue {
         let house = houseList[indexPath.row]
-        performSegue(withIdentifier: SegueIdentifier.houseDetail.rawValue, sender: house)
+            performSegue(withIdentifier: SegueIdentifier.houseDetail.rawValue, sender: house)
+        }
     }
 
     // MARK: - Navigation
@@ -88,4 +105,17 @@ class HomeListTableViewController: UITableViewController {
             controller.house = house
         }
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if typeOfView == TypeView.map.rawValue {
+            return tableView.frame.height
+        }
+        return UITableViewAutomaticDimension
+    }
+    
+    @IBAction func changeViewAction(_ sender: UISegmentedControl) {
+        typeOfView = sender.selectedSegmentIndex
+        tableView.reloadData()
+    }
+    
 }

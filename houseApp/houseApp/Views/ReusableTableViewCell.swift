@@ -24,7 +24,7 @@ class ReusableTableViewCell: UITableViewCell {
         title.text = house.description
         typeHouse.text = house.type
         state.text = house.state
-        price.text  = String("$ \(house.price)")
+        price.text  = String("$\(house.price)")
         mainHouseImage.image = house.image ?? #imageLiteral(resourceName: "homedefault")
     }
 }

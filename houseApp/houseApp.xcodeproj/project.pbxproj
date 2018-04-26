@@ -32,6 +32,9 @@
 		9B9B8AF620921F28004E396D /* SegmentControlValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8AF520921F28004E396D /* SegmentControlValue.swift */; };
 		9B9B8AFB20923272004E396D /* HomeImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B8AF920923272004E396D /* HomeImageTableViewCell.xib */; };
 		9B9B8AFC20923272004E396D /* HomeImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8AFA20923272004E396D /* HomeImageTableViewCell.swift */; };
+		9B9B8AFF2092484C004E396D /* MapReusableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9B8AFD2092484C004E396D /* MapReusableCell.xib */; };
+		9B9B8B002092484C004E396D /* MapReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8AFE2092484C004E396D /* MapReusableCell.swift */; };
+		9B9B8B0220924FBF004E396D /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9B8B0120924FBF004E396D /* TypeView.swift */; };
 		A72A83CE848A40BE8A341C01 /* Pods_houseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C1AA29D3BCB3CB9214AF27 /* Pods_houseApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,9 @@
 		9B9B8AF520921F28004E396D /* SegmentControlValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlValue.swift; sourceTree = "<group>"; };
 		9B9B8AF920923272004E396D /* HomeImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeImageTableViewCell.xib; sourceTree = "<group>"; };
 		9B9B8AFA20923272004E396D /* HomeImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageTableViewCell.swift; sourceTree = "<group>"; };
+		9B9B8AFD2092484C004E396D /* MapReusableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapReusableCell.xib; sourceTree = "<group>"; };
+		9B9B8AFE2092484C004E396D /* MapReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapReusableCell.swift; sourceTree = "<group>"; };
+		9B9B8B0120924FBF004E396D /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		B6DD576CD2F13B6D086094AB /* Pods-houseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houseApp/Pods-houseApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6C1AA29D3BCB3CB9214AF27 /* Pods_houseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_houseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +156,8 @@
 				9B9B8AEC2090EE41004E396D /* ReusableTableViewCell.swift */,
 				9B9B8AF920923272004E396D /* HomeImageTableViewCell.xib */,
 				9B9B8AFA20923272004E396D /* HomeImageTableViewCell.swift */,
+				9B9B8AFD2092484C004E396D /* MapReusableCell.xib */,
+				9B9B8AFE2092484C004E396D /* MapReusableCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 				9B6195CD208FF93D00900E8E /* Extensions */,
 				9B9B8AF1209108FC004E396D /* SeguesIdentifier.swift */,
 				9B9B8AF520921F28004E396D /* SegmentControlValue.swift */,
+				9B9B8B0120924FBF004E396D /* TypeView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -286,6 +295,7 @@
 				9B9B8AD820900C78004E396D /* Main.storyboard in Resources */,
 				9B6195C4208FCF0200900E8E /* GoogleService-Info.plist in Resources */,
 				9B6195B5208FC8C200900E8E /* Assets.xcassets in Resources */,
+				9B9B8AFF2092484C004E396D /* MapReusableCell.xib in Resources */,
 				9B9B8AED2090EE41004E396D /* ReusableTableViewCell.xib in Resources */,
 				9B6195B3208FC8C100900E8E /* Login.storyboard in Resources */,
 			);
@@ -382,12 +392,14 @@
 				9B9B8AF2209108FC004E396D /* SeguesIdentifier.swift in Sources */,
 				9B9B8ADE20903934004E396D /* DBModel.swift in Sources */,
 				9B9B8AF02090FC63004E396D /* UITableViewCell+ReusableId.swift in Sources */,
+				9B9B8B0220924FBF004E396D /* TypeView.swift in Sources */,
 				9B6195B0208FC8C100900E8E /* LoginViewController.swift in Sources */,
 				9B6195AE208FC8C100900E8E /* AppDelegate.swift in Sources */,
 				9B9B8ADC20903925004E396D /* FirebasePath.swift in Sources */,
 				9B6195D12090062300900E8E /* HomeListTableViewController.swift in Sources */,
 				9B9B8AE22090E44A004E396D /* Handler.swift in Sources */,
 				9B9B8AE020903949004E396D /* DBHandler.swift in Sources */,
+				9B9B8B002092484C004E396D /* MapReusableCell.swift in Sources */,
 				9B9B8AE52090E5B7004E396D /* House.swift in Sources */,
 				9B6195C7208FD2B300900E8E /* AuthHandler.swift in Sources */,
 			);
