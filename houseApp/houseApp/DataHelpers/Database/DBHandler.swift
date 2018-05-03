@@ -32,6 +32,25 @@ struct DBHandler {
         }
     }
     
+    static func getHouses(by latitud: Double, longitud: Double) -> Promise <[[String: Any]]> {
+        return Promise { resolve in
+            houses.observe(.value, with: { snapshot in
+                let data = snapshot.value as? [String: Any] ?? [:]
+                var houselistDictArray: [[String: Any]] = []
+                for snData in data {
+                    if let movieListData = snData.value as? [String: Any] {
+                        if let location = movieListData["location"] as? [String: Any] {
+                            if latitud == location["latitud"] as? Double && longitud == location["longitud"] as? Double {
+                                houselistDictArray.append(movieListData)
+                            }
+                        }
+                    }
+                }
+                resolve.fulfill(houselistDictArray)
+            })
+        }
+    }
+    
     static func getHouseImage(house: House, completionHandler: @escaping (Data?, Error?) -> ()) {
         let houseImageRef = images.child(house.id)
         houseImageRef.getData(maxSize: Int64.max) { data, error in

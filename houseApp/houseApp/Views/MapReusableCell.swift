@@ -24,12 +24,19 @@ class MapReusableCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(with houses: [House]) {
+    func configure(with houses: [House], showLocation: Bool = false) {
+        if showLocation {
+            showMyLocation()
+        }
         map.delegate = self
         self.houses = houses
         for house in houses {
            setMarket(house: house)
         }
+    }
+    
+    func configure(with house: House) {
+        showMyLocation()
     }
     
     func setMarket(house: House) {
@@ -60,7 +67,9 @@ extension MapReusableCell: MKMapViewDelegate {
             house.description == description
         }
         let selectedHouse = possiblesHouses[0]
-        tableViewParent?.configureDetailsView(house: selectedHouse)
+        if tableViewParent != nil {
+            tableViewParent?.configureDetailsView(house: selectedHouse)
+        }
     }
 }
 

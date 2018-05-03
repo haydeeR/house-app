@@ -2,7 +2,7 @@
 //  LocationHandler.swift
 //  houseApp
 //
-//  Created by Haydee Rodriguez on 5/3/18.
+//  Created by Haydee Rodriguez on 4/24/18.
 //  Copyright © 2018 Haydee Rodriguez. All rights reserved.
 //
 
@@ -11,11 +11,8 @@ import CoreLocation
 
 class LocationService: NSObject {
     
-    //MARK: - Shared instance
     static var sharedInstance = LocationService()
     
-    //MARK: - Properties
-    //MARK: Private properties
     private lazy var locationManager: CLLocationManager = {
         var _locationManager = CLLocationManager()
         _locationManager.delegate = self
@@ -48,21 +45,6 @@ class LocationService: NSObject {
         } else {
             updateCurrentLocation(newLocation: defaultLocation)
         }
-    }
-    
-    func reverseGeolocatePlacemark(coordinate: CLLocationCoordinate2D, completionHandler: @escaping (CLPlacemark?) -> Void) {
-        let geoCoder = CLGeocoder()
-        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-            var placemark: CLPlacemark?
-            if let placemarks = placemarks {
-                if placemarks.count > 0 {
-                    placemark = placemarks[0]
-                }
-            }
-            completionHandler(placemark)
-        })
-        
     }
     
     //MARK: Private functions

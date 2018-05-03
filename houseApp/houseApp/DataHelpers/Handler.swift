@@ -17,6 +17,12 @@ struct Handler {
         }
     }
     
+    static func getHousesByLocation(by latitud: Double, longitud: Double) -> Promise <[House]> {
+        return DBHandler.getHouses(by: latitud, longitud: longitud).map { data -> [House] in
+            return ParseHandler.parseHouseList(with: data)
+        }
+    }
+    
     static func getHouseImage(house: House, completionHandler: @escaping (UIImage?, Error?) -> ()) {
         DBHandler.getHouseImage(house: house) { data, error in
             if let data = data {

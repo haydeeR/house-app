@@ -22,10 +22,12 @@ class HouseDetailViewController: UIViewController {
     fileprivate let rowAmount = 4
     fileprivate let textCellIdentifier = "cell"
     var house: House?
+    var houseList: [House] = []
     
     override func viewDidLoad() {
         setupTableView()
         registerCells()
+        getHousesByLocation()
     }
     
     func setupTableView() {
@@ -38,13 +40,36 @@ class HouseDetailViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: HomeImageTableViewCell.reusableId)
         nib = UINib(nibName: MapReusableCell.reusableId, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: MapReusableCell.reusableId)
-        nib = UINib(nibName: MapReusableCell.reusableId, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: MapReusableCell.reusableId)
     }
     
     @IBAction func changeViewAction(_ sender: UISegmentedControl) {
         typeOfView = sender.selectedSegmentIndex
         tableView.reloadData()
+    }
+    
+    func getHousesByLocation() {
+        Handler.getLists().map ({ houselist in
+            self.houseList = houselist
+            let houseFilter = self.houseList.filter({ (house) -> Bool in
+                house.state == self.house?.state as! String
+            })
+            self.houseList = houseFilter
+            for house in houseFilter {
+                Handler.getHouseImage(house: house, completionHandler: { (image, error) in
+                    if let image = image {
+                        house.image = image
+                    }else {
+                        print(error)
+                    }
+                })
+            }
+        })
+        .done {
+            self.tableView.reloadData()
+        }
+        .catch({ error -> Void in
+            print(error)
+        })
     }
 }
 
@@ -86,6 +111,7 @@ extension HouseDetailViewController: UITableViewDataSource {
     
     private func createCell() -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: MapReusableCell.reusableId) as? MapReusableCell)!
+        cell.configure(with: houseList)
         return cell
     }
     
