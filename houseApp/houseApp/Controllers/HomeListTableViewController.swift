@@ -32,25 +32,16 @@ class HomeListTableViewController: UITableViewController {
     private func getHouses() {
         Handler.getLists().map ({ houselist in
             self.houseList = houselist
-                for house in self.houseList {
-                    Handler.getHouseImage(house: house, completionHandler: { (image, error) in
-                        if let image = image {
-                            house.image = image
-                        }else {
-                            print(error)
-                        }
-                    })
-                }
+            for h in self.houseList {
+                Handler.getHouseImage(houseId: "\(h.id)", completionHandler: { (image, error) in
+                    if error == nil {
+                        h.image = image
+                        self.tableView.reloadData()
+                    }
+                })
+            }
             })
             .done {
-                for i in self.houseList{
-                    if let image = i.image {
-                        print("Tiene imagen \(image)")
-                    }
-                    else {
-                        print("No hay imagenes")
-                    }
-                }
                 self.tableView.reloadData()
             }
             .catch({ error -> Void in

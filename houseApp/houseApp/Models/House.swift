@@ -17,7 +17,7 @@ class House: Mappable {
     var price: Int = 0
     var location: Location = Location(longitude: 0, latitude: 0)
     var image: UIImage?
-    var id: String = ""
+    var id: Int = 0
     var type: String = ""
     
     required init?(map: Map){
@@ -36,7 +36,8 @@ class House: Mappable {
     }
     
     func toDictionary() -> [String: Any] {
-        return ["address": address,
+        return ["id": id,
+                "address": address,
                 "state": state,
                 "city": city,
                 "description": description,

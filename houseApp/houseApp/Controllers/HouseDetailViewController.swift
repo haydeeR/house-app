@@ -54,15 +54,6 @@ class HouseDetailViewController: UIViewController {
                 house.state == self.house?.state as! String
             })
             self.houseList = houseFilter
-            for house in houseFilter {
-                Handler.getHouseImage(house: house, completionHandler: { (image, error) in
-                    if let image = image {
-                        house.image = image
-                    }else {
-                        print(error)
-                    }
-                })
-            }
         })
         .done {
             self.tableView.reloadData()

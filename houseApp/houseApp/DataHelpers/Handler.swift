@@ -23,8 +23,8 @@ struct Handler {
         }
     }
     
-    static func getHouseImage(house: House, completionHandler: @escaping (UIImage?, Error?) -> ()) {
-        DBHandler.getHouseImage(house: house) { data, error in
+    static func getHouseImage(houseId: String, completionHandler: @escaping (UIImage?, Error?) -> ()) {
+        DBHandler.getHouseImage(houseId: houseId) { data, error in
             if let data = data {
                 completionHandler(UIImage.init(data: data), error)
             } else {

@@ -15,7 +15,7 @@ struct DBHandler {
     static let houses = Database.database().reference(withPath: FirebasePath.houses.rawValue)
     static let users = Database.database().reference(withPath: FirebasePath.users.rawValue)
     static let favoriteHouses = Database.database().reference(withPath: FirebasePath.favoriteHouses.rawValue)
-    static let images = Storage.storage().reference(forURL: "gs://home-app-106f7.appspot.com/")
+    static let images = Storage.storage().reference(forURL: "gs://home-app-106f7.appspot.com/images/")
     
     static func getLists() -> Promise <[[String: Any]]> {
         return Promise { resolve in
@@ -51,8 +51,8 @@ struct DBHandler {
         }
     }
     
-    static func getHouseImage(house: House, completionHandler: @escaping (Data?, Error?) -> ()) {
-        let houseImageRef = images.child(house.id)
+    static func getHouseImage(houseId: String, completionHandler: @escaping (Data?, Error?) -> ()) {
+        let houseImageRef = images.child(houseId+".jpg")
         houseImageRef.getData(maxSize: Int64.max) { data, error in
             completionHandler(data, error)
         }
