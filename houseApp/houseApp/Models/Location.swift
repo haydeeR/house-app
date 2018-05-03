@@ -8,7 +8,6 @@
 
 import Foundation
 import ObjectMapper
-import MapKit
 
 class Location: Mappable {
     
@@ -25,7 +24,7 @@ class Location: Mappable {
     }
     
     func mapping(map: Map) {
-        longitude   <- map["longitude"]
-        latitude    <- map["latitude"]
+        longitude   <- map["longitud"]
+        latitude    <- map["latitud"]
     }
 }

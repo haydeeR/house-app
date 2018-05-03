@@ -37,17 +37,7 @@ struct AuthHandler {
          //   loginVC.changeView(with: StoryboardPath.main.rawValue, viewControllerName: ViewControllerPath.homeViewController.rawValue)
         }
     }
-   /*
-    static func logOut(logoutVC: ProfileViewController) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            logoutVC.changeView(with: StoryboardPath.login.rawValue, viewControllerName: ViewControllerPath.loginViewController.rawValue)
-        } catch error as NSError {
-            print(error)
-        }
-    }
-    */
+    
     static func getCurrentAuth() -> String? {
         if let currentUser = Auth.auth().currentUser {
             return currentUser.uid

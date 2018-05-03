@@ -75,6 +75,7 @@ class HomeListTableViewController: UITableViewController {
         if typeOfView == TypeView.map.rawValue {
             let cell = (tableView.dequeueReusableCell(withIdentifier: MapReusableCell.reusableId, for: indexPath) as? MapReusableCell)!
             cell.configure(with: houseList)
+            cell.tableViewParent = self
             return cell
         }
         let house = houseList[indexPath.row]
@@ -104,6 +105,10 @@ class HomeListTableViewController: UITableViewController {
             }
             controller.house = house
         }
+    }
+    
+    func configureDetailsView(house: House) {
+        performSegue(withIdentifier: SegueIdentifier.houseDetail.rawValue, sender: house)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

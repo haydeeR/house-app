@@ -54,5 +54,11 @@
     <string>1957439654289005</string>
     <key>FacebookDisplayName</key>
     <string>HomeApp</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Privacy - Location Always and When In Use Usage Description</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Privacy - Location Always Usage Description</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Privacy - Location When In Use Usage Description</string>
 </dict>
 </plist>
