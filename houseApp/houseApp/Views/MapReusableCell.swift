@@ -25,7 +25,6 @@ class MapReusableCell: UITableViewCell {
     }
     
     func configure(with houses: [House]) {
-       // showMyLocation()
         map.delegate = self
         self.houses = houses
         for house in houses {

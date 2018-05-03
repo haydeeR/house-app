@@ -26,11 +26,11 @@
                     <navigationItem key="navigationItem" id="PhP-27-Il0">
                         <barButtonItem key="rightBarButtonItem" id="Viv-Ub-cog">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="0k1-pu-3i4">
-                                <rect key="frame" x="238" y="7.5" width="121" height="29"/>
+                                <rect key="frame" x="238" y="7.5" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Lista"/>
+                                    <segment title="Mapa"/>
                                 </segments>
                                 <connections>
                                     <action selector="changeViewAction:" destination="6WB-aL-sjd" eventType="valueChanged" id="auA-bV-Eq0"/>
@@ -76,11 +76,11 @@
                     <navigationItem key="navigationItem" id="dZc-2G-IMr">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="U9s-SP-vMF">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ZYN-Y4-6Hv">
-                                <rect key="frame" x="238" y="7.5" width="121" height="29"/>
+                                <rect key="frame" x="238" y="7.5" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Lista"/>
+                                    <segment title="Mapa"/>
                                 </segments>
                                 <connections>
                                     <action selector="changeViewAction:" destination="1nO-1H-KNd" eventType="valueChanged" id="AYD-o2-p9c"/>
