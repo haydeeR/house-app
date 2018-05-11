@@ -23,8 +23,6 @@ class LocationService: NSObject {
     fileprivate var returnLocation: (CLLocation) -> () = {_ in}
     fileprivate var currentLocation: CLLocation?
     
-    //MARK: - Functions
-    //MARK: Public functions
     func getLocation(completion: @escaping (CLLocation) -> ()) {
         if let currentLocation = currentLocation {
             completion(currentLocation)

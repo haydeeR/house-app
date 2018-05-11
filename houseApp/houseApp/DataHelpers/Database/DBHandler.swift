@@ -58,20 +58,4 @@ struct DBHandler {
         }
     }
     
-    static func setMovieWatched(movieId: String, watched: Bool) {
-        guard let userId = AuthHandler.getCurrentAuth() else {
-            return
-        }
-        
-        let watchRef = houses.child(movieId)
-            .child(FirebasePath.houses.rawValue)
-            .child(userId)
-            .child(FirebasePath.users.rawValue)
-        
-        if watched {
-            watchRef.setValue(true)
-        } else {
-            watchRef.removeValue()
-        }
-    }
 }
